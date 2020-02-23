@@ -1,3 +1,4 @@
+
 def raw_read(directory):
   ls=[]
   for files in sorted(os.listdir(directory)):
