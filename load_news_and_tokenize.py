@@ -1,12 +1,13 @@
 import raw_read
 import pandas as pd
-import tokenizer
+from pytorch_pretrained_bert import BertTokenizer
 #load
 raw=raw_read('/content/drive/My Drive/bbc news/News Articles')
 raw_news['news']=raw
 #tokenize
 processed_text=[]
 text_cnt=[]
+tokenizer=BertTokenizer.from_pretrained('bert-base-uncased')
 for i in raw_news['news']:
   i=tokenizer.tokenize(i)
   processed_text.append(i)
