@@ -1,4 +1,5 @@
 #now we need to insert ['cls'] and ['sep']
+import convert_to_ids
 def add_cls_sep(raw_news):
   count=0
   cls=[]
@@ -13,7 +14,7 @@ def add_cls_sep(raw_news):
       if k == 1012:
         j.insert(i+1,102)
         j.insert(i+2,101)
-        if (i+2)!= len(j):
+        if (i+2)!= len(j): # to avoid inserting cls tokwn aT THE end of sentence
           cls_ids.append(i+2)
         num=num+1
     #try:
@@ -25,11 +26,11 @@ def add_cls_sep(raw_news):
       #j.insert(pos+2,101)
     #except:
       #count+=1
-    if j[-1]==101:
+    if j[-1]==101: #rmove cls token inserted at the end
       j.pop(-1)
     
   return cls
-#give raw_news before query
+#give raw_news after 4
 cls=add_cls_sep(raw_news)
-raw_news['cls']=cls
+raw_news['cls_ind']=cls
 
