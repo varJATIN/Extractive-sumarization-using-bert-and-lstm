@@ -44,3 +44,10 @@ def segment_id_gen(df):
     seg_ids+=[seg_id]
   print((seg_ids[2]))
   return seg_ids
+
+
+
+
+if main:
+  seg_ids=segment_id_gen(raw_news['indexed_text'])
+  
