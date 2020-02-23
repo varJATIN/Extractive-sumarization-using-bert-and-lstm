@@ -3,6 +3,7 @@ import pandas as pd
 from pytorch_pretrained_bert import BertTokenizer
 #load
 raw=raw_read('/content/drive/My Drive/bbc news/News Articles')
+raw_news=pd.DataFrame()
 raw_news['news']=raw
 #tokenize
 processed_text=[]
