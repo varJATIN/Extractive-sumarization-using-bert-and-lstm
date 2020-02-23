@@ -1,4 +1,5 @@
 import numpy as np
+import 
 #batch_generation
 def batchify(batch_size,df,seq_len):
   """ arguments will be dataframe column to batchify and batch_size
@@ -49,5 +50,8 @@ def segment_id_gen(df):
 
 
 if main:
+  batch_size=10
   seg_ids=segment_id_gen(raw_news['indexed_text'])
-  
+  raw_mains['cls_ind']=padding(raw_news['cls_ind'],max_sent_summ)
+  batches=batchify(batch_size,raw_news['indexed_text'],512)
+  cls_batch=batchify(batch_size,raw_news['cls_ind'],max_sent_summ)
