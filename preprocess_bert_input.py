@@ -1,5 +1,5 @@
+import add_cls_sep_tokens
 import numpy as np
-import 
 #batch_generation
 def batchify(batch_size,df,seq_len):
   """ arguments will be dataframe column to batchify and batch_size
