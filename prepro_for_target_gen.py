@@ -2,7 +2,7 @@ import os
 import regex as re
 import pandas as pd
 directory='/content/drive/My Drive/bbc news/'
-
+#
 def read(directory,folder):
   if (folder=='news'):
     select='News Articles'
